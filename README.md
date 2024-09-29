@@ -1,4 +1,4 @@
-# fullcycle
+# Full Cycle 3.0
 Repositório utilizado no curso Full Cycle 3.0
 
 ## Dasagio GO - Módulo Docker
