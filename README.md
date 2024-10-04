@@ -11,3 +11,17 @@ Resultado: Full Cycle Rocks!!
 chateaufischer/fullcycle                                           latest              9b9bc38a2142   42 minutes ago   1.75MB
 
 ## Dasafio NODE - Módulo Docker
+
+### Clonar o projeto: 
+git clone https://github.com/chateaufischer/fullcycle.git
+
+### Para executar o projeto:
+cd node
+docker compose up -d
+
+### Acessar o front:
+http://localhost:3000/
+
+
+
+
