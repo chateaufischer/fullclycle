@@ -22,6 +22,5 @@ docker compose up -d
 ### Acessar o front:
 http://localhost:3000/
 
-
-
-
+### Resultado
+![Texto Alternativo](img/resultado_node.png)
