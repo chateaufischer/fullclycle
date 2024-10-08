@@ -10,12 +10,15 @@ services:
       - MYSQL_DATABASE=nodedb
       - MYSQL_ROOT_PASSWORD=password         
     volumes:
-      - ./app/.docker/mysql:/docker-entrypoint-initdb.d
+      # Utilizado para iniciar os dados do banco
+      - ./app/.docker/mysql:/docker-entrypoint-initdb.d      
+      # Mapeia o direrório utilizado para armazenar os dados do Mysql
+      - ./db:/var/lib/mysql 
     networks: 
       - node-network  
 
   app:
-    container_name: app
+    container_name: app 
     build: ./app
     restart: always
     ports:
@@ -24,8 +27,7 @@ services:
       - db
     volumes:
       - ./app:/usr/src/app
-    tty: true
-    #entrypoint: dockerize -wait tcp://db:3306 -timeout 20s docker-entrypoint.sh
+    tty: true    
     entrypoint: dockerize -wait tcp://db:3306 -timeout 20s sh -c "npm install && npm run start"
     networks: 
       - node-network    
@@ -42,6 +44,8 @@ services:
       - app
       - db
     tty: true  
+    networks: 
+      - node-network   
 
 networks: 
   node-network:
